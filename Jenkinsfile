@@ -1,4 +1,4 @@
-/* groovylint-disable-next-line CompileStatic */
+/* groovylint-disable CompileStatic */
 pipeline {
     agent any
     stages {
@@ -9,13 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'This is for build'
                 sh 'npm install'
+                sh 'npm run build'
             }
         }
         stage('Deploying') {
             steps {
-                echo '** Deploying ** '
                 sh 'npm start'
             }
         }
