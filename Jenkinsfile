@@ -1,20 +1,20 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Test') {
             steps {
-                sh 'echo this is test.'
+                echo 'this is for test'
             }
         }
         stage('Build') {
             steps {
-                sh 'echo Build $BUILD_NUMBER'
+                echo 'This is for build'
             }
         }
-        stage('Deploye') {
+        stage('Deploying') {
             steps {
-                sh 'echo Hai Deploye'
+                echo '** Deploying ** '
             }
         }
     }
