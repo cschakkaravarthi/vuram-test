@@ -1,4 +1,6 @@
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
+    agent none
     stages {
         stage('Test') {
             steps {
@@ -7,7 +9,6 @@ pipeline {
         }
         stage('Build') {
             steps {
-                //sh 'npm install'
                 sh 'echo Build $BUILD_NUMBER'
             }
         }
