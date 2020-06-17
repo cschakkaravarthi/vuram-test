@@ -10,11 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'This is for build'
+                sh 'npm install'
             }
         }
         stage('Deploying') {
             steps {
                 echo '** Deploying ** '
+                sh 'npm start'
             }
         }
     }
