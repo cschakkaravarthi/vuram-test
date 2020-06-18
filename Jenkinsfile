@@ -1,11 +1,16 @@
 /* groovylint-disable CompileStatic */
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
     stages {
         stage('Slack Notification') {
             steps {
                 /* groovylint-disable-next-line LineLength, SpaceAroundMapEntryColon */
-                slackSend channel: 'vuram-jenkins', color: 'good', message: 'hai', teamDomain: 'onething-talk', tokenCredentialId: '0d40401d-26c4-45c9-a962-f24e0204b0ac'
+                slackSend channel: 'vuram-jenkins', color: 'good', message: 'hai', teamDomain: 'onething-talk', tokenCredentialId: '9AGIpj59tDBYFldd8kXklfmP'
             }
         }
         stage('Test') {
@@ -16,7 +21,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm run build'
             }
         }
         stage('Deploying') {
