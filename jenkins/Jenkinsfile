@@ -1,4 +1,4 @@
-/* groovylint-disable CompileStatic */
+/* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
     stages {
@@ -8,19 +8,17 @@ pipeline {
                 slackSend channel: 'vuram-jenkins', color: 'good', message: 'hai', teamDomain: 'onething-talk', tokenCredentialId: '9AGIpj59tDBYFldd8kXklfmP'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'this is for test'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Deploying') {
+        stage('Deliver') {
             steps {
-                sh 'npm start'
+                sh './jenkins/scripts/deliver.sh'
+                /* groovylint-disable-next-line SpaceAroundMapEntryColon */
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './jenkins/scripts/kill.sh'
             }
         }
     }
