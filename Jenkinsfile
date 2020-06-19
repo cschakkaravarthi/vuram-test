@@ -1,10 +1,11 @@
+#!/bin/bash
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent any
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                echo 'hello  Test'
             }
         }
         stage('Slack Notification') {
@@ -15,7 +16,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install'
+                echo 'hello  Build $(date)'
             }
         }
         stage('Deliver') {
