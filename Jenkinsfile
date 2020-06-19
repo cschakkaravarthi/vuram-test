@@ -1,8 +1,6 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
-    agent {
-        docker { image 'mhart/alpine-node' }
-    }
+    agent any
     stages {
         stage('Test') {
             steps {
