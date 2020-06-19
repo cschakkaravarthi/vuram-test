@@ -17,6 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'hello  Build $(date)'
+                sh 'npm -v'
             }
         }
         stage('Deliver') {
