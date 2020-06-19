@@ -1,7 +1,7 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
     agent {
-        docker { image 'mhart/alpine-node:11' }
+        docker { image 'mhart/alpine-node' }
     }
     stages {
         stage('Test') {
