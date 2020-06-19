@@ -1,7 +1,14 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
-    agent any
+    agent {
+        docker { image 'mhart/alpine-node:11' }
+    }
     stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
         stage('Slack Notification') {
             steps {
                 /* groovylint-disable-next-line LineLength, SpaceAroundMapEntryColon */

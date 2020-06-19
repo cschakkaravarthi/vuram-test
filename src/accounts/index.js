@@ -11,8 +11,8 @@ function Account() {
         acDetails: {
             acName: 'Ohana, Inc.',
             acNumber: 'A43836686',
-            acType: 'Enterprise',
-            acIndustry: 'Biotecnology',
+            acType: 'chakkaravarthi',
+            acIndustry: 'Chakkaravarthi',
             acTotalSales: '$41,860.00',
             totalEmp: '20,050',
             dsa: 308,
