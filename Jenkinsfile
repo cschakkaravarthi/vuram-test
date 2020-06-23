@@ -1,12 +1,7 @@
 #!/bin/bash
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
+    any agent
     stages {
         stage('Test') {
             steps {
@@ -22,15 +17,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'hello  Build $(date)'
-                sh 'npm -v'
             }
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
-                /* groovylint-disable-next-line SpaceAroundMapEntryColon */
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './jenkins/scripts/kill.sh'
+                echo 'Deliver to Server'
             }
         }
     }
