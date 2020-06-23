@@ -1,7 +1,7 @@
 #!/bin/bash
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
-    any agent
+    agent any
     stages {
         stage('Test') {
             steps {
