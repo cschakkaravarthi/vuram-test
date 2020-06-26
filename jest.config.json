@@ -1,0 +1,27 @@
+{
+    "setupFiles": [
+        "<rootDir>/src/setupTests.js"
+    ],
+    "testRegex": "/*.test.js$",
+    "collectCoverage": true,
+    "coverageReporters": [
+        "lcov"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+        "global": {
+            "branches": 0,
+            "functions": 0,
+            "lines": 0,
+            "statements": 0
+        }
+    },
+    "unmockedModulePathPatterns": [
+        "node_modules/react/",
+        "node_modules/enzyme/"
+    ],
+    "moduleDirectories": [
+        "node_modules",
+        "src"
+    ]
+}

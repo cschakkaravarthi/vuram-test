@@ -9,7 +9,7 @@ function Account() {
 
     const [acData] = useState({
         acDetails: {
-            acName: 'Ohana, Inc.',
+            acName: 'Ohana, In.',
             acNumber: 'A4383668',
             acType: 'chakkaravarthi',
             acIndustry: 'Chakkaravarthi',
